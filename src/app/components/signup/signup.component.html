@@ -1,0 +1,66 @@
+<div id="login-box">
+    <div class="left">
+        <h1>Sign up</h1>
+        <form [formGroup]='signupForm'>
+            <input type="text" name="username" placeholder="Username" formControlName='fname' />
+
+                <div
+                    *ngIf="signupForm.controls['fname'].invalid && (signupForm.controls['fname'].touched || signupForm.controls['fname'].dirty)">
+                    <div *ngIf="signupForm.controls['fname'].errors.required" style="color: red;">
+                        First Name is required
+
+                    </div>
+                    <div *ngIf="signupForm.controls['fname'].errors.minlength" style="color: red;">
+                        First Name must be at least with 4 characteres
+
+                    </div>
+
+
+                </div>
+                <input type="text" name="email" placeholder="E-mail" formControlName='email' />
+                <div>
+
+                    <div
+                        *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                        <div *ngIf="signupForm.controls['email'].errors.required" style="color: red;">
+                            email is required
+
+                        </div>
+                        <div *ngIf="signupForm.controls['email'].errors.email" style="color: red;">
+                            email must be at the format @ .
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <input type="password" name="password" placeholder="Password" formControlName='pwd'
+                    formControlName='pwd' />
+                <input type="password" name="password2" placeholder="Retype password" formControlName='cpwd' />
+                <div
+                    *ngIf="signupForm.controls['cpwd'].invalid && (signupForm.controls['cpwd'].touched || signupForm.controls['cpwd'].dirty)">
+                    <div *ngIf="signupForm.controls['cpwd'].errors.required" style="color: rgb(148, 20, 20);">
+                        Confirm Password is required
+
+                    </div>
+                    <div *ngIf="signupForm.controls['cpwd'].errors.mustMatch" style="color: red;">
+                        password and confirm password must match
+
+                    </div>
+
+                </div>
+
+                <button name="signup_submit" (click)='signup()'>Sign me up</button>
+
+        </form>
+    </div>
+
+    <div class="right">
+        <span class="loginwith">Sign in with<br />social network</span>
+
+        <button class="social-signin facebook">Log in with facebook</button>
+        <button class="social-signin twitter">Log in with Twitter</button>
+        <button class="social-signin google">Log in with Google+</button>
+    </div>
+    <div class="or">OR</div>
+</div>

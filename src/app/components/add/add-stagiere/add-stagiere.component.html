@@ -1,0 +1,332 @@
+    <!-- **********************************************************************************************************************************************************
+          TOP BAR CONTENT & NOTIFICATIONS
+          *********************************************************************************************************************************************************** -->
+    <!--header start-->
+ 
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+          MAIN SIDEBAR MENU
+          *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+          MAIN CONTENT
+          *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-9 main-chart">
+                    <div class="col-lg-9 col-md-9 col-sm-9">
+                        <h4 class="title">{{title}} Stagiere</h4>
+                        <div id="message"></div>
+                        <form class="contact-form php-mail-form" [formGroup]="addStagiereForm">
+
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="firstName"
+                                    placeholder="Your First Name" formControlName="firstName" [(ngModel)]="user.firstName">
+                            </div>
+
+                            <div
+                                *ngIf="addStagiereForm.controls['firstName'].invalid && (addStagiereForm.controls['firstName'].touched || addStagiereForm.controls['firstName'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['firstName'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    First Name is required
+
+                                </div>
+                                <div *ngIf="addStagiereForm.controls['firstName'].errors.minlength"
+                                    style="color: rgb(148, 20, 20);">
+                                    First Name must be at least with 3 characteres
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="lastName"
+                                    placeholder="Your Last Name" formControlName="lastName" [(ngModel)]="user.lastName">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['lastName'].invalid && (addStagiereForm.controls['lastName'].touched || addStagiereForm.controls['lastName'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['lastName'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    Last Name is required
+
+                                </div>
+                                <div *ngIf="addStagiereForm.controls['lastName'].errors.minlength"
+                                    style="color: rgb(148, 20, 20);">
+                                    Last Name must be at least with 3 characteres
+
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group"> Date of Birth </label>
+                                <input type="date" name="name" class="form-control" id="age" placeholder=""
+                                    formControlName="age" [(ngModel)]="user.age">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['age'].invalid && (addStagiereForm.controls['age'].touched || addStagiereForm.controls['age'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['age'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    Date of Birth is required
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="" class="form-control" id="email" placeholder="Your Email"
+                                    formControlName="email" [(ngModel)]="user.email">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['email'].invalid && (addStagiereForm.controls['email'].touched || addStagiereForm.controls['email'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['email'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    email of Formee is required
+
+                                </div>
+                                <div *ngIf="addStagiereForm.controls['email'].errors.email "
+                                    style=' color: rgb(148, 20,20);'>
+                                    email must be at the format
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="password"
+                                    formControlName="password" [(ngModel)]="user.password">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['password'].invalid && (addStagiereForm.controls['password'].touched || addStagiereForm.controls['password'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['password'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    password is required
+
+                                </div>
+                                <div *ngIf="addStagiereForm.controls['password'].errors.minlength"
+                                    style="color: rgb(148, 20, 20);">
+                                    password must be at least with 4 characteres
+
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="cpassword"
+                                    placeholder="confirm password" formControlName="confirmPwd" [(ngModel)]="user.confirmPwd">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['confirmPwd'].invalid && (addStagiereForm.controls['confirmPwd'].touched || addStagiereForm.controls['confirmPwd'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['confirmPwd'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    Confirm Password is required
+
+                                </div>
+                                <div *ngIf="addStagiereForm.controls['confirmPwd'].errors.mustMatch" style="color: red;">
+                                    password and confirm password must match
+            
+                                  </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="" class="form-control" id="phone"
+                                    placeholder="Your phone number" formControlName="phone" [(ngModel)]="user.phone">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['phone'].invalid && (addStagiereForm.controls['phone'].touched || addStagiereForm.controls['phone'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['phone'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    phone is required
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="" class="form-control" id="CIN"
+                                    placeholder="Your CIN number" formControlName="CIN" [(ngModel)]="user.CIN">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['CIN'].invalid && (addStagiereForm.controls['CIN'].touched || addStagiereForm.controls['CIN'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['CIN'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    CIN is required
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" class="form-control" id="adresse" placeholder="Your adresse"
+                                    formControlName="adresse" [(ngModel)]="user.adresse">
+                            </div>
+                            <div
+                                *ngIf="addStagiereForm.controls['adresse'].invalid && (addStagiereForm.controls['adresse'].touched || addStagiereForm.controls['adresse'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['adresse'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    adresse is required
+
+                                </div>
+
+
+
+                            </div>
+
+                          
+                            <label class="form-group">Stage</label>
+                            <select class="form-control " style="margin-bottom: 20px;" formControlName="stage" [(ngModel)]="user.stage">
+                                <option value="initialisation">initialisation</option>
+                                <option value="Perfectionnement">Perfectionnement</option>
+                                <option value="PFE">PFE</option>
+                                <option value="Formateur">Formateur</option>
+
+                            </select>
+                            <div
+                                *ngIf="addStagiereForm.controls['stage'].invalid && (addStagiereForm.controls['stage'].touched || addStagiereForm.controls['stage'].dirty)">
+                                <div *ngIf="addStagiereForm.controls['stage'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                   type of the stage is required
+
+                                </div>
+
+
+
+
+
+                            </div>
+                            <!-- <div class="form-group">
+                            <label >stagiere CV</label>
+                            <input type="file" name="" class="form-control" id="cv" placeholder="Your CV"
+                                formControlName="cv" [(ngModel)]="user.cv">
+                            </div>
+
+                          <div class="form-group"><label >stagiere Image</label>
+
+                            <input type="file" name="image" class="form-control" formControlName="image" [(ngModel)]="user.image"> 
+                        </div>   -->
+
+                            <div class="form-send">
+                                <button class="btn btn-large btn-primary"
+                                    (click)="addStagiereFN(addStagiereForm.value)">{{title}}
+                                    Stagiere</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 ds">
+                    <img src="assets/img/img3.png" alt="" height="300" width="250" style="margin-bottom: 30%;">
+                    Web development generally refers to the tasks associated with the development of websites intended
+                    to be hosted via an intranet or the Internet. The web development process includes, among other
+                    things, website design, web content development, client-side or server-side scripting, and network
+                    security configuration.
+                </div>
+                <!-- /col-lg-3 -->
+            </div>
+            <!-- /row -->
+        </section>
+    </section>
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+        <div class="text-center">
+            <p>
+                &copy; Copyrights <strong>Gestion Académie</strong>. All Rights Reserved
+            </p>
+            <div class="credits">
+                <!--
+              You are NOT allowed to delete the credit link to TemplateMag with free version.
+              You can delete the credit link only if you bought the pro version.
+              Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+              Licensing information: https://templatemag.com/license/
+            -->
+                Created by ManarDahmou
+            </div>
+            <a href="index.html#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+<!-- js placed at the end of the document so the pages load faster -->
+<div
+    style="position: relative; top: 0px; float: right; width: 3px; height: 285px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px;">
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'Welcome to Dashio!',
+            // (string | mandatory) the text inside the notification
+            text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.',
+            // (string | optional) the image to display on the left
+            image: 'img/ui-sam.png',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: false,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: 8000,
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class'
+        });
+
+        return false;
+    });
+</script>
+<script type="application/javascript">
+    $(document).ready(function () {
+        $("#date-popover").popover({
+            html: true,
+            trigger: "manual"
+        });
+        $("#date-popover").hide();
+        $("#date-popover").click(function (e) {
+            $(this).hide();
+        });
+
+        $("#my-calendar").zabuto_calendar({
+            action: function () {
+                return myDateFunction(this.id, false);
+            },
+            action_nav: function () {
+                return myNavFunction(this.id);
+            },
+            ajax: {
+                url: "show_data.php?action=1",
+                modal: true
+            },
+            legend: [{
+                type: "text",
+                label: "Special event",
+                badge: "00"
+            },
+            {
+                type: "block",
+                label: "Regular event",
+            }
+            ]
+        });
+    });
+
+    function myNavFunction(id) {
+        $("#date-popover").hide();
+        var nav = $("#" + id).data("navigation");
+        var to = $("#" + id).data("to");
+        console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+    }
+</script>

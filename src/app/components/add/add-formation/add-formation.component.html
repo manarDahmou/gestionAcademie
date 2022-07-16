@@ -1,0 +1,271 @@
+<!-- <section id="container"> -->
+    <!-- **********************************************************************************************************************************************************
+          TOP BAR CONTENT & NOTIFICATIONS
+          *********************************************************************************************************************************************************** -->
+  
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+          MAIN SIDEBAR MENU
+          *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+  
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+          MAIN CONTENT
+          *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-9 main-chart">
+                    <div class="col-lg-9 col-md-9 col-sm-9">
+                        <h4 class="title">{{title}} Formation</h4>
+                        <div id="message"></div>
+                        <form class="contact-form php-mail-form" [formGroup]="addFormationForm">
+
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="firstName"
+                                    placeholder="Name of Training" formControlName="nameFormation" [(ngModel)]="user.nameFormation">
+                            </div>
+
+                            <div
+                                *ngIf="addFormationForm.controls['nameFormation'].invalid && (addFormationForm.controls['nameFormation'].touched || addFormationForm.controls['nameFormation'].dirty)">
+                                <div *ngIf="addFormationForm.controls['nameFormation'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    Name Training is required
+
+                                </div>
+                                <div *ngIf="addFormationForm.controls['nameFormation'].errors.minlength"
+                                    style="color: rgb(148, 20, 20);">
+                                    Name Training must be at least with 3 characteres
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="form-group"> Date Bigining Of Training </label>
+                                <input type="date" name="name" class="form-control" id="dateDebut" placeholder=""
+                                    formControlName="dateDebutFormation" [(ngModel)]="user.dateDebutFormation">
+                            </div>
+                            <div
+                                *ngIf="addFormationForm.controls['dateDebutFormation'].invalid && (addFormationForm.controls['dateDebutFormation'].touched || addFormationForm.controls['dateDebutFormation'].dirty)">
+                                <div *ngIf="addFormationForm.controls['dateDebutFormation'].errors.required"
+                                    style="color: rgb(148, 20, 20);">
+                                    Date of beging is required
+
+
+                                </div>
+                            </div>
+                            
+                                <div class="form-group">
+                                    <label class="form-group"> Date END Of Training </label>
+                                    <input type="date" name="name" class="form-control" id="dateDebut" placeholder=""
+                                        formControlName="dateEndFormation" [(ngModel)]="user.dateEndFormation">
+                                </div>
+                                <div
+                                    *ngIf="addFormationForm.controls['dateEndFormation'].invalid && (addFormationForm.controls['dateEndFormation'].touched || addFormationForm.controls['dateEndFormation'].dirty)">
+                                    <div *ngIf="addFormationForm.controls['dateEndFormation'].errors.required"
+                                        style="color: rgb(148, 20, 20);">
+                                        Date of End is required
+
+                                    </div>
+
+                                </div>
+
+<!--                                  
+                                <div class="form-group" >
+                                    <label class="form-group">Programme of The Training </label><br>
+                                    <input type="checkbox"
+                                        formControlName="initialiser"> <label class="form-group" > Initialisation web  </label><br>
+                                        <input type="checkbox"
+                                        formControlName="programmation"> <label class="form-group" > programmation  </label><br>
+                                        <input type="checkbox"
+                                        formControlName="angular"> <label class="form-group" > angular  </label><br>
+                                        <input type="checkbox"
+                                        formControlName="js" > <label class="form-group" > Java Script </label><br>
+                                </div> -->
+
+                                <div class="form-group">
+                                    <input type="number" name="name" class="form-control" id="firstName"
+                                        placeholder="Number Hours of the training " formControlName="nbHeur" [(ngModel)]="user.nbHeur">
+                                </div>
+    
+                                <div
+                                    *ngIf="addFormationForm.controls['nbHeur'].invalid && (addFormationForm.controls['nbHeur'].touched || addFormationForm.controls['nbHeur'].dirty)">
+                                    <div *ngIf="addFormationForm.controls['nbHeur'].errors.required"
+                                        style="color: rgb(148, 20, 20);">
+                                        number training  is required
+    
+                                    </div>
+                                    
+                                </div>
+    
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="firstName"
+                                        placeholder="Name of Formateur" formControlName="nameFormateur" [(ngModel)]="user.nameFormateur">
+                                        <!-- <select class="form-control " style="margin-bottom: 20px;" formControlName="nameFormateur" [(ngModel)]="user.nameFormateur">
+                                            <option value=""> Name Formateur</option>
+                                            <option value="{{f.firstName}} {{f.lastName}}"  *ngFor='let f of formateurs'>{{f.firstName}} {{f.lastName}}</option>
+                                        </select> -->
+                                </div>
+    
+                                <div
+                                    *ngIf="addFormationForm.controls['nameFormateur'].invalid && (addFormationForm.controls['nameFormateur'].touched || addFormationForm.controls['nameFormateur'].dirty)">
+                                    <div *ngIf="addFormationForm.controls['nameFormateur'].errors.required"
+                                        style="color: rgb(148, 20, 20);" >
+                                        Name Formateur is required
+    
+                                    </div>
+                                    <div *ngIf="addFormationForm.controls['nameFormateur'].errors.minlength"
+                                        style="color: rgb(148, 20, 20);">
+                                        Name Formateur must be at least with 3 characteres
+    
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="number" name="name" class="form-control" id="firstName"
+                                        placeholder="price of Training" formControlName="price"  [(ngModel)]="user.price">
+                                </div>
+    
+                                <div
+                                    *ngIf="addFormationForm.controls['price'].invalid && (addFormationForm.controls['price'].touched || addFormationForm.controls['price'].dirty)">
+                                    <div *ngIf="addFormationForm.controls['price'].errors.required"
+                                        style="color: rgb(148, 20, 20);">
+                                         price is required
+    
+                                    </div>
+                                   
+                               
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" name="name" class="form-control" id="firstName"
+                                        placeholder="Number Formee of the training " formControlName="nbFormee" [(ngModel)]="user.nbFormee">
+                                </div>
+    
+                                <div
+                                    *ngIf="addFormationForm.controls['nbFormee'].invalid && (addFormationForm.controls['nbFormee'].touched || addFormationForm.controls['nbFormee'].dirty)">
+                                    <div *ngIf="addFormationForm.controls['nbFormee'].errors.required"
+                                        style="color: rgb(148, 20, 20);">
+                                        number student   is required
+    
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="form-send">
+                                    <button class="btn btn-large btn-primary"
+                                        (click)="addFormation(addFormationForm.value)">{{title}}
+                                        Formation</button>
+                                </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 ds">
+                    <img src="assets/img/img2.jfif" alt="" height="300" width="250" style="margin-bottom: 30%;">
+                    Web development generally refers to the tasks associated with the development of websites intended
+                    to be hosted via an intranet or the Internet. The web development process includes, among other
+                    things, website design, web content development, client-side or server-side scripting, and network
+                    security configuration.
+                </div>
+                <!-- /col-lg-3 -->
+            </div>
+            <!-- /row -->
+        </section>
+    </section>
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+        <div class="text-center">
+            <p>
+                &copy; Copyrights <strong>Gestion Académie</strong>. All Rights Reserved
+            </p>
+            <div class="credits">
+                <!--
+              You are NOT allowed to delete the credit link to TemplateMag with free version.
+              You can delete the credit link only if you bought the pro version.
+              Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+              Licensing information: https://templatemag.com/license/
+            -->
+                Created by ManarDahmou
+            </div>
+            <a href="index.html#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+<!-- </section> -->
+<!-- js placed at the end of the document so the pages load faster -->
+<div
+    style="position: relative; top: 0px; float: right; width: 3px; height: 285px; background-color: rgb(78, 205, 196); background-clip: padding-box; border-radius: 10px;">
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'Welcome to Dashio!',
+            // (string | mandatory) the text inside the notification
+            text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.',
+            // (string | optional) the image to display on the left
+            image: 'img/ui-sam.png',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: false,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: 8000,
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class'
+        });
+
+        return false;
+    });
+</script>
+<script type="application/javascript">
+    $(document).ready(function () {
+        $("#date-popover").popover({
+            html: true,
+            trigger: "manual"
+        });
+        $("#date-popover").hide();
+        $("#date-popover").click(function (e) {
+            $(this).hide();
+        });
+
+        $("#my-calendar").zabuto_calendar({
+            action: function () {
+                return myDateFunction(this.id, false);
+            },
+            action_nav: function () {
+                return myNavFunction(this.id);
+            },
+            ajax: {
+                url: "show_data.php?action=1",
+                modal: true
+            },
+            legend: [{
+                type: "text",
+                label: "Special event",
+                badge: "00"
+            },
+            {
+                type: "block",
+                label: "Regular event",
+            }
+            ]
+        });
+    });
+
+    function myNavFunction(id) {
+        $("#date-popover").hide();
+        var nav = $("#" + id).data("navigation");
+        var to = $("#" + id).data("to");
+        console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+    }
+</script>
